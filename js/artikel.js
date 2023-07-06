@@ -57,7 +57,7 @@ for (let perArtikel of artikelList) {
   //   console.log(perArtikel);
   let cardArtikel = document.createElement("div");
   cardArtikel.innerHTML += `
-  <div class="card w-64 h-96 bg-white shadow-xl mb-5">
+  <div class="card w-64 h-96 bg-white shadow-2xl mb-5">
           <figure class="px-7 pt-7">
             <img src=${perArtikel.gambar} class="rounded-xl" />
           </figure>
