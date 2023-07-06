@@ -8,19 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              montserrat: ["Montserrat", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/pemesanan.css" />
+    <script src="js/taillwind-Config.js"></script>
 
-    <title>Artikel Kesehatan - ApoteQ</title>
+    <title>ApoteQ</title>
   </head>
   <body class="text-black font-[montserrat] bg-white">
     <!-- ini Navbar -->
@@ -83,11 +75,16 @@
     </div>
     <!-- ini akhir Navbar -->
     <!--  -->
-    <div class="bg-white h-screen">
-      <h1 class="mx-10 mb-4 font-bold leading-none tracking-tight text-gray-900 md:text-3xl dark:text-black p-10">Artikel Terbaru</h1>
-      <div class="grid lg:grid-cols-5 place-items-center gap-5 mx-10" id="artikelpage"></div>
+    <div class="bg-white mb-10 h-screen" id="pemesanan">
+      <div class="grid grid-cols-2">
+        <h1 class="mx-10 mb-4 font-bold leading-none tracking-tight text-gray-900 md:text-3xl dark:text-black p-10">Pemesanan Kamu</h1>
+      </div>
+      <div class="px-10">
+        <ol class="items-center grid grid-cols-3 gap-3" id="pemesananpage"></ol>
+      </div>
     </div>
     <!--  -->
+
     <!-- Footer -->
     <footer class="footer p-10 bg-[#d8fcfb] text-neutral-content font-[montserrat] font-semibold" style="bottom: 0" id="footer">
       <div class="md:ms-10 max-w-md">
@@ -129,9 +126,12 @@
     </footer>
     <h1 class="text-center py-2 text-[12px] font-bold bg-[#3491b2]">© 2023 ApoteQ. All rights reserved</h1>
     <!-- Akhir Footer -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/loginRegister.js"></script>
-    <script src="./js/artikel.js"></script>
+    <script src="./js/list-obat.js"></script>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/pemesanan.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

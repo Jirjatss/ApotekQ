@@ -22,7 +22,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </label>
           <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52">
-            <li><a>Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a>About</a></li>
             <li><a>Contact</a></li>
           </ul>
@@ -31,7 +31,7 @@
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-          <li><a>Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a>About</a></li>
           <li><a>Contact</a></li>
         </ul>
@@ -73,7 +73,7 @@
       </div>
     </div>
     <!-- ini akhir Navbar -->
-    <div class="bg-[url('assets/bg-1.png')] bg-fixed bg-cover">
+    <div class="bg-[url('assets/bg-1.png')] bg-fixed bg-cover h-screen">
       <div class="grid lg:grid-cols-2 grid-cols-1">
         <div class="hero min-h-screen lg:w-[1080px]">
           <div class="hero-content text-center">
@@ -88,8 +88,8 @@
                 </div>
                 <div class="card card-compact w-full bg-white shadow-xl mt-10 hover:bg-[#3491b2] hover:text-white py-3" data-aos="fade-up">
                   <figure><img src="./assets/apotek.png" alt="Toko Obat" class="w-20" /></figure>
-                  <div class="card-body">
-                    <p>Toko Obat</p>
+                  <div class="card-body" id="toko-obat">
+                    <a href="shop.html">Toko Obat</a>
                   </div>
                 </div>
                 <div class="card card-compact w-full bg-white shadow-xl mt-10 hover:bg-[#3491b2] hover:text-white py-3">
@@ -132,6 +132,9 @@
       </div>
     </div>
     <!-- akhir slider -->
+    <!-- Modal checkout -->
+
+    <!-- modalcheckout end -->
 
     <!-- Maps -->
     <div class="pt-40 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed p-24 bg-[url('https://www.mapsinternational.co.uk/pub/media/catalog/product/x/b/l/blue-world-map-wallpaper_wp00823_1.jpg')] bg-cover">
@@ -149,7 +152,7 @@
     <!-- Akhir Maps -->
 
     <!-- Footer -->
-    <footer class="footer p-10 bg-[#d8fcfb] text-neutral-content font-[montserrat] font-semibold" id="footer">
+    <footer class="footer p-10 bg-[#d8fcfb] text-neutral-content font-[montserrat] font-semibold" style="bottom: 0" id="footer">
       <div class="md:ms-10 max-w-md">
         <span class="text-black font-bold text-[18px] mb-5">Location</span>
         <a class="text-slate-600 text-[14px] mt-5">Jl. Arteri Pd. Indah No.7, RT.5/RW.9, Kby. Lama Sel., Kec. Kby. Lama, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240</a>
