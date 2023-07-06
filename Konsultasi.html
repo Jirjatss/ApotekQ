@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.7/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <script src="js/taillwind-Config.js"></script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<title>Booking Dokter</title>
+    <title>ApoteQ</title>
+</head>
 
-
-<body class="bg-blue-200">
+<body class="text-black">
     <!-- ini Navbar -->
     <div class="navbar bg-[#d8fcfb] px-5 sticky top-0 z-50 font-semibold font-[montserrat]">
         <div class="navbar-start">
@@ -91,9 +99,175 @@
     </div>
     <!-- ini akhir Navbar -->
 
- 
+    <body class="bg-blue-200">
+        <div class="container mx-auto py-10">
+            <h1 class="text-3xl font-bold text-white text-center mb-8">Pilihan Dokter</h1>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white rounded shadow p-4">
+                    <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/w_144,h_144,c_fit,dpr_3,r_max/v1570171554/image_doctor/dr.%20Amelia%20Suganda%2C%20Sp.OG.png.png"
+                        alt="Doctor 1" class="w-full mb-4 rounded">
+                    <h2 class="text-xl font-bold">Dr. Amanda Padlo</h2>
+                    <p>Dokter Mata</p>
+                    <div class="flex justify-center">
+                        <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            data-doctor="Dr. Amanda Padlo">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow p-4">
+                    <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/w_144,h_144,c_fit,dpr_3,r_max/v1674545557/image_doctor/dr.-Ade-Permana%2C-Sp.OG-KFER-feab1ec5-fccd-4572-99d9-c1b8cf404893.png"
+                        alt="Doctor 2" class="w-full mb-4 rounded">
+                    <h2 class="text-xl font-bold">Dr. Austin Woody</h2>
+                    <p>Dokter Kandungan</p>
+                    <div class="flex justify-center">
+                        <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            data-doctor="Dr. Austin Woody">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-white rounded shadow p-4">
+                    <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/w_144,h_144,c_fit,dpr_3,r_max/v1568699310/image_doctor/dr.%20Kathleen%20Juanita%20Gunawan%20Soenario%2C%20Sp.OG.jpg.png"
+                        alt="Doctor 3" class="w-full mb-4 rounded">
+                    <h2 class="text-xl font-bold">Dr. Carrie Rause</h2>
+                    <p>Dokter Anak</p>
+                    <div class="flex justify-center">
+                        <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                            data-doctor="Dr. Carrie Rause">
+                            Pilih
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    
-</body>
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 flex items-center justify-center z-10 hidden">
+            <div class="bg-white w-1/2 p-8 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">Detail Dokter</h2>
+                <p id="doctorName" class="mb-4"></p>
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama:</label>
+                        <input type="text" id="name" name="name" class="border border-gray-400 rounded px-4 py-2 w-full"
+                            placeholder="Masukkan nama" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email"
+                            class="border border-gray-400 rounded px-4 py-2 w-full" placeholder="Masukkan email"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Nomor Telepon:</label>
+                        <input type="tel" id="phone" name="phone"
+                            class="border border-gray-400 rounded px-4 py-2 w-full" placeholder="Masukkan nomor telepon"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Tanggal:</label>
+                        <input type="date" id="date" name="date" class="border border-gray-400 rounded px-4 py-2 w-full"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="time" class="block text-gray-700 text-sm font-bold mb-2">Waktu:</label>
+                        <input type="time" id="time" name="time" class="border border-gray-400 rounded px-4 py-2 w-full"
+                            required>
+                    </div>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Pesan
+                    </button>
+                    <button id="closeModal"
+                        class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Tutup
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="flex justify-center mt-4">
+            <a href="index.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Kembali ke
+                Index</a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer p-10 bg-[#d8fcfb] text-neutral-content font-[montserrat] font-semibold" id="footer">
+            <div class="md:ms-10 max-w-md">
+                <span class="text-black font-bold text-[18px] mb-5">Location</span>
+                <a class="text-slate-600 text-[14px] mt-5">Jl. Arteri Pd. Indah No.7, RT.5/RW.9, Kby. Lama Sel., Kec.
+                    Kby.
+                    Lama,
+                    Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240</a>
+                <div class="flex mt-2 gap-3">
+                    <span class="material-symbols-outlined" style="color: #3491b2"> mail </span>
+                    <span class="material-symbols-outlined" style="color: #3491b2"> call </span>
+                </div>
+            </div>
+            <div>
+                <span class="text-black font-bold text-[18px] mb-5">Fitur</span>
+                <a class="text-slate-600 text-[14px]">Konsultasi</a>
+                <a class="text-slate-600 text-[14px]">Toko Obat</a>
+                <a class="text-slate-600 text-[14px]">Artikel</a>
+            </div>
+            <div>
+                <span class="text-black font-bold text-[18px] mb-5">About Us</span>
+                <a class="text-slate-600 text-[14px]">Tentang Kami</a>
+                <a class="text-slate-600 text-[14px]">FAQ</a>
+                <a class="text-slate-600 text-[14px]">Lapor Masalah</a>
+            </div>
+            <div>
+                <span class="text-black font-bold text-[18px] mb-5">Newsletter</span>
+                <a class="text-slate-600 text-[14px]">Cintai hidupmu, ke ApoteQ tiap hari</a>
+                <div class="flex">
+                    <input type="text"
+                        class="file-input w-full bg-white border-black border-2 px-2 text-black font-thin text-[14px]" />
+                    <button
+                        class="bg-[#3491b2] border -ms-3 px-3 border-black border-y-2 border-r-2 rounded-r-lg text-white">SEND</button>
+                </div>
+                <div class="flex">
+                    <span class="material-symbols-outlined" style="color: #3491b2"> mail </span>
+                    <p class="text-slate-600 text-[14px] ms-2">ApoteQ@gmail.com</p>
+                </div>
+                <div class="flex">
+                    <span class="material-symbols-outlined" style="color: #3491b2"> call </span>
+                    <p class="text-slate-600 text-[14px] ms-2">0888 1111 2222</p>
+                </div>
+            </div>
+        </footer>
+        <h1 class="text-center py-2 text-[12px] font-bold bg-[#3491b2]">© 2023 ApoteQ. All rights reserved</h1>
+        <!-- Akhir Footer -->
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="./js/loginRegister.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            // JavaScript logic to handle modal
+            const modal = document.getElementById('modal');
+            const closeModalBtn = document.getElementById('closeModal');
+            const doctorButtons = document.querySelectorAll('.bg-blue-500');
+            const doctorName = document.getElementById('doctorName');
+
+            function openModal(doctor) {
+                doctorName.textContent = doctor;
+                modal.classList.remove('hidden');
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+            }
+
+            doctorButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const doctor = button.getAttribute('data-doctor');
+                    openModal(doctor);
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                closeModal();
+            });
+        </script>
+    </body>
 
 </html>
