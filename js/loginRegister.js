@@ -126,26 +126,33 @@ submitMasuk.addEventListener("click", function (event) {
   }
 });
 
+//
 let found = localStorage.getItem("loginApoteq");
 let modalMasuk = document.getElementById("modal-login");
 let modalRegister = document.getElementById("modal-daftar");
 let navbar = document.getElementById("navbar");
 let artikel = document.getElementById("artikel");
+let shop = document.getElementById("toko-obat");
 if (found) {
   modalMasuk.remove();
   modalRegister.remove();
   let modalLogout = document.createElement("label");
+  let chart = document.createElement("span");
   modalLogout.innerHTML += `
   <button  class="bg-[#3491b2] px-3 py-2 rounded-lg text-white hover:bg-white hover:text-[#3491b2] cursor-pointer" id="logout">Logout</button>
   `;
-
+  chart.innerHTML += `
+  <a href="checkout.html"><span style="font-size:40px; margin-top: 0.5rem" class="material-symbols-outlined ">shopping_cart </span></a>
+  `;
+  navbar.appendChild(chart);
   navbar.appendChild(modalLogout);
 } else {
   artikel.innerHTML = `
   <label id="modal-login" for="my-modal-2" class="cursor-pointer">Artikel</label>
   `;
+  shop.innerHTML = `<label id="modal-login" for="my-modal-2" class="cursor-pointer">Toko Obat</label>`;
 }
-
+//
 // logout
 
 let logouthandle = document.getElementById("logout");

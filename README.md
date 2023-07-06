@@ -1,1 +1,0 @@
-Ini Aplikasi kita
