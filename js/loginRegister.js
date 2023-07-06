@@ -162,7 +162,7 @@ logouthandle.addEventListener("click", (e) => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire({ title: "Sweet!", text: "Anda berhasil Keluar", icon: "success", confirmButtonColor: "#3491b2", confirmButtonText: '<a href="../index.html">Great! </a>' });
+      Swal.fire({ title: "Sweet!", text: "Anda berhasil Keluar", icon: "success", confirmButtonColor: "#3491b2", confirmButtonText: '<a href="index.html">Great! </a>' });
       localStorage.removeItem("loginApoteq");
     }
   });
