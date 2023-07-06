@@ -27,8 +27,8 @@ submitDaftar.addEventListener("click", (e) => {
       title: "Sweet!",
       text: "Selamat anda berhasil Registrasi",
       icon: "success",
-      showConfirmButton: false,
-      timer: 1500,
+      confirmButtonColor: "#3491b2",
+      confirmButtonText: '<a href="index.html">Great! </a>',
     });
     formDaftar.reset();
   } else {
@@ -102,12 +102,16 @@ submitMasuk.addEventListener("click", function (event) {
         return HasilLogin.mail === user.mail && HasilLogin.Password === user.Password;
       });
       if (found) {
+        hasilLogin.push(HasilLogin);
+        let login = JSON.stringify(hasilLogin);
+        localStorage.setItem("loginApoteq", login);
+
         Swal.fire({
           title: "Sweet!",
           text: "Selamat anda berhasil Masuk",
           icon: "success",
           confirmButtonColor: "#3491b2",
-          confirmButtonText: '<a href="/index.html">Great! </a>',
+          confirmButtonText: '<a href="index.html">Great! </a>',
         });
       } else {
         Swal.fire({
@@ -120,4 +124,46 @@ submitMasuk.addEventListener("click", function (event) {
       }
     }
   }
+});
+
+let found = localStorage.getItem("loginApoteq");
+let modalMasuk = document.getElementById("modal-login");
+let modalRegister = document.getElementById("modal-daftar");
+let navbar = document.getElementById("navbar");
+let artikel = document.getElementById("artikel");
+if (found) {
+  modalMasuk.remove();
+  modalRegister.remove();
+  let modalLogout = document.createElement("label");
+  modalLogout.innerHTML += `
+  <button  class="bg-[#3491b2] px-3 py-2 rounded-lg text-white hover:bg-white hover:text-[#3491b2] cursor-pointer" id="logout">Logout</button>
+  `;
+
+  navbar.appendChild(modalLogout);
+} else {
+  artikel.innerHTML = `
+  <label id="modal-login" for="my-modal-2" class="cursor-pointer">Artikel</label>
+  `;
+}
+
+// logout
+
+let logouthandle = document.getElementById("logout");
+
+logouthandle.addEventListener("click", (e) => {
+  e.preventDefault();
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3491b2",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({ title: "Sweet!", text: "Anda berhasil Keluar", icon: "success", confirmButtonColor: "#3491b2", confirmButtonText: '<a href="index.html">Great! </a>' });
+      localStorage.removeItem("loginApoteq");
+    }
+  });
 });
