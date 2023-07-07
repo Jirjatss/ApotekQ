@@ -114,6 +114,9 @@ function updateTotalHarga() {
 }
 
 function del(id) {
+  setTimeout(function (id) {
+    location.reload();
+  }, 1500);
   let check = JSON.parse(localStorage.getItem("checkout"));
   for (let i = 0; i < check.length; i++) {
     if (id === check[i].id) {
@@ -130,9 +133,6 @@ function del(id) {
       break;
     }
   }
-  setTimeout(function () {
-    location.reload();
-  }, 1500);
 }
 
 function removeTableRow(id) {

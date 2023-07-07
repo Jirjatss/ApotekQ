@@ -138,12 +138,17 @@ if (found) {
   modalRegister.remove();
   let modalLogout = document.createElement("label");
   let chart = document.createElement("span");
+  let orders = document.createElement("span");
   modalLogout.innerHTML += `
   <button  class="bg-[#3491b2] px-3 py-2 rounded-lg text-white hover:bg-white hover:text-[#3491b2] cursor-pointer" id="logout">Logout</button>
   `;
   chart.innerHTML += `
   <a href="checkout.html"><span style="font-size:40px; margin-top: 0.5rem" class="material-symbols-outlined ">shopping_cart </span></a>
   `;
+  orders.innerHTML += `<a href="pemesanan.html"><span style="font-size:40px; margin-top: 0.5rem"  class="material-symbols-outlined">
+  grading
+  </span> </a>`;
+  navbar.appendChild(orders);
   navbar.appendChild(chart);
   navbar.appendChild(modalLogout);
 } else {
