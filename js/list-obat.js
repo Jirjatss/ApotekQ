@@ -29,8 +29,7 @@ for (let perObat of obat) {
               <h1 class="font-bold text-xl">${perObat.nama}</h1>
               <p class="font-bold">Rp ${perObat.harga}
               <div class="card-actions justify-start">
-              <div class="badge badge-outline">${perObat.type}</div> 
-              <div class="text-red-500">${perObat.stok} left</div> 
+              <div class="badge badge-outline">${perObat.type}</div>           
             </div>
               <div class="card-actions mt-5">
                 <button onclick="checkoutObat(${perObat.id})" id=${perObat.id} class="bg-[#3491b2] px-3 py-2 rounded-lg text-white hover:bg-white hover:text-[#3491b2] flex">

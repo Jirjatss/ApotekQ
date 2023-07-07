@@ -3,7 +3,7 @@ let dataChart = JSON.parse(localStorage.getItem("checkout"));
 let checkoutpage = document.getElementById("checkoutpage");
 let kosong = document.getElementById("keranjang");
 
-if (dataChart === null) {
+if (dataChart === null || dataChart.length === 0) {
   let el = document.createElement("h1");
   el.innerHTML = `<h1 class="mx-10 mb-4 font-bold leading-none tracking-tight text-gray-900 md:text-2xl dark:text-black p-20 text-center" id="keranjang-kosong">Keranjang Kosong</h1>`;
   kosong.appendChild(el);
